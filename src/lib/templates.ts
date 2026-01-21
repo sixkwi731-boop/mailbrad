@@ -74,6 +74,64 @@ export const emailTemplates: Record<string, EmailTemplate> = {
   </body>
 </html>`,
   },
+  "modelo-01": {
+    id: "modelo-01",
+    name: "Modelo 01 - Bradesco",
+    subject: "Bem-vindo Banco Bradesco S.A.",
+    html: `<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bradesco</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;">
+      <tr>
+        <td align="center" style="padding:0;">
+          <table role="presentation" style="max-width:800px;width:100%;background:#ffffff;" cellpadding="0" cellspacing="0">
+            <tr>
+              <!-- Barra vermelha esquerda -->
+              <td style="width:40px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 100%);"></td>
+              
+              <!-- Conteúdo central -->
+              <td style="padding:40px 24px;background:#ffffff;">
+                <!-- Logo Bradesco -->
+                <div style="text-align:center;margin-bottom:32px;">
+                  <img src="/bra.png" alt="Bradesco" style="max-width:300px;height:auto;" />
+                </div>
+
+                <!-- Título -->
+                <h1 style="margin:0 0 24px 0;font-size:28px;color:#CC092F;text-align:center;">
+                  Bem-vindo Banco Bradesco S.A.
+                </h1>
+
+                <!-- Conteúdo -->
+                <div style="color:#333333;font-size:16px;line-height:1.6;">
+                  <p style="margin:0 0 16px 0;">Olá, {{name}}</p>
+                  
+                  <!-- CONTEUDO SERA INSERIDO AQUI -->
+                  <p style="margin:0 0 16px 0;">
+                    Conteúdo do email será adicionado aqui.
+                  </p>
+                </div>
+
+                <!-- Rodapé -->
+                <div style="margin-top:40px;padding-top:24px;border-top:1px solid #e0e0e0;font-size:12px;color:#666666;text-align:center;">
+                  <p style="margin:0;">Este é um email automático. Por favor, não responda.</p>
+                </div>
+              </td>
+              
+              <!-- Barra vermelha direita -->
+              <td style="width:40px;background:linear-gradient(180deg, #E91E63 0%, #CC092F 100%);"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`,
+  },
 };
 
 export const emailTemplateList = Object.values(emailTemplates);

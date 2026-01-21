@@ -21,6 +21,11 @@ export const transporter = isSmtpConfigured()
     })
   : null;
 
+export function getAbsoluteUrl(path: string): string {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+  return `${baseUrl}${path}`;
+}
+
 export async function sendEmail({
   to,
   subject,

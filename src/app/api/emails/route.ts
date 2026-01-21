@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { emailTemplates } from "@/lib/templates";
-import { sendEmail } from "@/lib/brevo";
+import { sendEmail, getAbsoluteUrl } from "@/lib/brevo";
 
 function renderTemplate(html: string, variables: Record<string, string>): string {
   let rendered = html;
@@ -8,6 +8,13 @@ function renderTemplate(html: string, variables: Record<string, string>): string
     const regex = new RegExp(`{{\\s*${key}\\s*}}`, "g");
     rendered = rendered.replace(regex, value);
   }
+  
+  // Substituir URLs relativas por absolutas para imagens
+  rendered = rendered.replace(
+    /src="\/([^"]+)"/g,
+    (match, path) => `src="${getAbsoluteUrl('/' + path)}"`
+  );
+  
   return rendered;
 }
 
