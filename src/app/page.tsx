@@ -9,6 +9,7 @@ export default function SendPage() {
   const [recipientEmail, setRecipientEmail] = useState("");
   const [recipientName, setRecipientName] = useState("");
   const [subject, setSubject] = useState("");
+  const [link, setLink] = useState("https://www.bradesco.com.br");
   const [sending, setSending] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -28,6 +29,7 @@ export default function SendPage() {
           recipientEmail,
           recipientName,
           subject: subject || selectedTemplate?.subject,
+          link,
         }),
       });
 
@@ -37,6 +39,7 @@ export default function SendPage() {
         setRecipientEmail("");
         setRecipientName("");
         setSubject("");
+        setLink("https://www.bradesco.com.br");
       } else {
         const error = await res.json();
         setMessage(`❌ Erro: ${error.error || "Falha ao enviar email"}`);
@@ -102,6 +105,17 @@ export default function SendPage() {
           />
         </div>
 
+        <div>
+          <label className="block mb-2 font-medium">Link do Botão</label>
+          <input
+            type="url"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+            className="w-full border border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+            placeholder="https://www.bradesco.com.br"
+          />
+        </div>
+
         <button
           type="submit"
           disabled={sending}
@@ -130,10 +144,9 @@ export default function SendPage() {
           <div className="border border-black p-6 bg-gray-50">
             <div
               dangerouslySetInnerHTML={{
-                __html: selectedTemplate.html.replace(
-                  /\{\{name\}\}/g,
-                  recipientName || recipientEmail || "Nome"
-                ),
+                __html: selectedTemplate.html
+                  .replace(/\{\{name\}\}/g, recipientName || recipientEmail || "Nome")
+                  .replace(/\{\{link\}\}/g, link || "https://www.bradesco.com.br"),
               }}
             />
           </div>
