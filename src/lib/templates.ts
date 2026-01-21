@@ -58,11 +58,28 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                   <p style="margin:0 0 20px 0;text-align:justify;">
                     Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
                   </p>
+
+                  <!-- Botão -->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0;">
+                    <tr>
+                      <td align="center">
+                        <a href="{{link}}" style="display:inline-block;background:#CC092F;color:#ffffff;text-decoration:none;padding:16px 48px;border-radius:8px;font-family:Verdana,Geneva,sans-serif;font-size:15px;font-weight:bold;">
+                          www.bradesco.com.br
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Assinatura -->
+                  <p style="margin:32px 0 0 0;text-align:center;color:#666666;font-size:13px;">
+                    Atenciosamente,<br/>
+                    Equipe.
+                  </p>
                 </div>
 
                 <!-- Rodapé -->
-                <div style="margin-top:56px;padding:24px 32px 48px 32px;border-top:1px solid #e0e0e0;font-size:11px;color:#666666;text-align:center;font-family:Verdana,Geneva,sans-serif;">
-                  <p style="margin:0;">Este é um email automático. Por favor, não responda.</p>
+                <div style="margin-top:40px;padding:24px 32px;background:#CC092F;font-size:12px;color:#ffffff;text-align:center;font-family:Verdana,Geneva,sans-serif;">
+                  <p style="margin:0;">© 2025</p>
                 </div>
               </td>
               
