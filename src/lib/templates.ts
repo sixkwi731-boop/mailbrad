@@ -27,12 +27,12 @@ export const emailTemplates: Record<string, EmailTemplate> = {
               <td style="width:100px;min-width:100px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 50%, #CC092F 100%);"></td>
               
               <!-- Conteúdo central -->
-              <td style="padding:48px 32px;background:#ffffff;">
-                <!-- GIF animado -->
+              <td style="padding:0;background:#ffffff;">
+                <!-- GIF animado - sem padding, colado nas bordas -->
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td align="center" style="padding:0 0 24px 0;">
-                      <img src="/unnamed.gif" alt="" style="display:block;max-width:100%;width:100%;height:auto;" />
+                    <td style="padding:0;line-height:0;">
+                      <img src="/unnamed.gif" alt="" style="display:block;width:100%;height:auto;margin:0;" />
                     </td>
                   </tr>
                 </table>
@@ -40,19 +40,19 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                 <!-- Logo Bradesco -->
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td align="center" style="padding:0 0 48px 0;">
+                    <td align="center" style="padding:32px 32px 40px 32px;">
                       <img src="/bra.png" alt="Bradesco" style="display:block;max-width:400px;width:100%;height:auto;" />
                     </td>
                   </tr>
                 </table>
 
                 <!-- Título -->
-                <h1 style="margin:0 0 40px 0;font-size:24px;font-weight:bold;color:#000000;text-align:center;font-family:Verdana,Geneva,sans-serif;line-height:1.4;">
+                <h1 style="margin:0 0 40px 0;padding:0 32px;font-size:24px;font-weight:bold;color:#000000;text-align:center;font-family:Verdana,Geneva,sans-serif;line-height:1.4;">
                   Bem Vindo Banco Bradesco S.A.
                 </h1>
 
                 <!-- Conteúdo -->
-                <div style="color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
+                <div style="padding:0 32px;color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
                   <p style="margin:0 0 20px 0;font-weight:bold;">Prezado(a) Cliente,</p>
                   
                   <p style="margin:0 0 20px 0;text-align:justify;">
@@ -61,7 +61,7 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                 </div>
 
                 <!-- Rodapé -->
-                <div style="margin-top:56px;padding-top:24px;border-top:1px solid #e0e0e0;font-size:11px;color:#666666;text-align:center;font-family:Verdana,Geneva,sans-serif;">
+                <div style="margin-top:56px;padding:24px 32px 48px 32px;border-top:1px solid #e0e0e0;font-size:11px;color:#666666;text-align:center;font-family:Verdana,Geneva,sans-serif;">
                   <p style="margin:0;">Este é um email automático. Por favor, não responda.</p>
                 </div>
               </td>
