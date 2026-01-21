@@ -53,9 +53,9 @@ export const emailTemplates: Record<string, EmailTemplate> = {
 
                 <!-- Conteúdo -->
                 <div style="padding:0 32px;color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
-                  <p style="margin:0 0 20px 0;font-weight:bold;">Prezado(a) Cliente,</p>
+                  <p style="margin:0 0 20px 0;font-weight:bold;text-align:center;">Prezado(a) Cliente,</p>
                   
-                  <p style="margin:0 0 20px 0;text-align:justify;">
+                  <p style="margin:0 0 20px 0;text-align:center;">
                     Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
                   </p>
 
@@ -73,13 +73,12 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                   <!-- Assinatura -->
                   <p style="margin:32px 0 0 0;text-align:center;color:#666666;font-size:13px;">
                     Atenciosamente,<br/>
-                    Equipe.
+                    Equipe Bradesco S.A.
                   </p>
                 </div>
 
                 <!-- Rodapé -->
                 <div style="margin-top:40px;padding:24px 32px;background:#CC092F;font-size:12px;color:#ffffff;text-align:center;font-family:Verdana,Geneva,sans-serif;">
-                  <p style="margin:0;">© 2025</p>
                 </div>
               </td>
               
