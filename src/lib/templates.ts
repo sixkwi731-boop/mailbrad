@@ -97,9 +97,13 @@ export const emailTemplates: Record<string, EmailTemplate> = {
               <!-- Conteúdo central -->
               <td style="padding:40px 24px;background:#ffffff;">
                 <!-- Logo Bradesco -->
-                <div style="text-align:center;margin-bottom:32px;">
-                  <img src="/bra.png" alt="Bradesco" style="max-width:300px;height:auto;" />
-                </div>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" style="padding:0 0 32px 0;">
+                      <img src="/bra.png" alt="Bradesco" style="display:block;max-width:300px;width:100%;height:auto;" />
+                    </td>
+                  </tr>
+                </table>
 
                 <!-- Título -->
                 <h1 style="margin:0 0 24px 0;font-size:28px;color:#CC092F;text-align:center;">
