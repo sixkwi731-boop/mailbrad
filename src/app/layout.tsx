@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Link from "next/link";
-import { EnvelopeClosedIcon, ClockIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,7 +10,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "MailBrad - Sistema de Envio de Emails",
-  description: "Sistema de envio de emails com modelos e tracking",
+  description: "Sistema de envio de emails com modelos",
 };
 
 export default function RootLayout({
@@ -25,23 +24,11 @@ export default function RootLayout({
         <nav className="border-b border-black">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <h1 className="text-2xl font-bold">MailBrad</h1>
-              <div className="flex gap-4">
-                <Link
-                  href="/"
-                  className="flex items-center gap-2 px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors"
-                >
-                  <EnvelopeClosedIcon />
-                  Enviar
-                </Link>
-                <Link
-                  href="/history"
-                  className="flex items-center gap-2 px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors"
-                >
-                  <ClockIcon />
-                  Histórico
-                </Link>
+              <div className="flex items-center gap-2">
+                <EnvelopeClosedIcon className="w-6 h-6" />
+                <h1 className="text-2xl font-bold">MailBrad</h1>
               </div>
+              <span className="text-sm text-gray-600">Sistema de Envio de Emails</span>
             </div>
           </div>
         </nav>

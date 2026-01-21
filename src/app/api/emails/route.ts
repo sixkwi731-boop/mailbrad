@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import { emailTemplates } from "@/lib/templates";
-import { renderTemplate, addTrackingPixel } from "@/lib/render-template";
 import { sendEmail } from "@/lib/brevo";
 
-export async function GET() {
-  const emails = await prisma.sentEmail.findMany({
-    orderBy: { createdAt: "desc" },
-  });
-  return NextResponse.json(emails);
+function renderTemplate(html: string, variables: Record<string, string>): string {
+  let rendered = html;
+  for (const [key, value] of Object.entries(variables)) {
+    const regex = new RegExp(`{{\\s*${key}\\s*}}`, "g");
+    rendered = rendered.replace(regex, value);
+  }
+  return rendered;
 }
 
 export async function POST(request: NextRequest) {
@@ -24,23 +24,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let html = renderTemplate(template.html, {
+    const html = renderTemplate(template.html, {
       name: recipientName || recipientEmail,
     });
-
-    const sentEmail = await prisma.sentEmail.create({
-      data: {
-        templateId,
-        recipientEmail,
-        recipientName,
-        subject: subject || template.subject,
-        htmlContent: html,
-        status: "sent",
-        sentAt: new Date(),
-      },
-    });
-
-    html = addTrackingPixel(html, sentEmail.id);
 
     await sendEmail({
       to: recipientEmail,
@@ -48,11 +34,19 @@ export async function POST(request: NextRequest) {
       html,
     });
 
-    return NextResponse.json(sentEmail);
+    return NextResponse.json({
+      success: true,
+      message: "Email enviado com sucesso!",
+      recipientEmail,
+      subject: subject || template.subject,
+    });
   } catch (error: unknown) {
     console.error("Erro ao enviar email:", error);
     return NextResponse.json(
-      { error: "Erro ao enviar email", details: error instanceof Error ? error.message : "Erro desconhecido" },
+      {
+        error: "Erro ao enviar email",
+        details: error instanceof Error ? error.message : "Erro desconhecido",
+      },
       { status: 500 }
     );
   }

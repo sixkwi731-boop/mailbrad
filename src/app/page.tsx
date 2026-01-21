@@ -32,13 +32,14 @@ export default function SendPage() {
       });
 
       if (res.ok) {
-        setMessage("Email enviado com sucesso!");
+        const data = await res.json();
+        setMessage(`✅ ${data.message} Enviado para: ${recipientEmail}`);
         setRecipientEmail("");
         setRecipientName("");
         setSubject("");
       } else {
         const error = await res.json();
-        setMessage(`Erro: ${error.error}`);
+        setMessage(`❌ Erro: ${error.error || "Falha ao enviar email"}`);
       }
     } catch (error) {
       setMessage(`Erro ao enviar: ${error instanceof Error ? error.message : "Erro desconhecido"}`);
