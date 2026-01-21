@@ -56,6 +56,12 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                     <p style="margin:0 0 8px 0;font-weight:bold;text-align:center;">Prezado(a) Cliente,</p>
                     <p style="margin:0 0 24px 0;font-weight:bold;text-align:center;font-size:16px;color:#CC092F;">{{name}}</p>
                     
+                    <!-- Dados da conta -->
+                    <div style="margin:0 0 24px 0;padding:16px;background:#f5f5f5;border-left:4px solid #CC092F;text-align:center;">
+                      <p style="margin:0 0 8px 0;font-size:13px;color:#666666;">Agência: <strong style="color:#000000;">{{agencia}}</strong></p>
+                      <p style="margin:0;font-size:13px;color:#666666;">Conta: <strong style="color:#000000;">{{conta}}</strong></p>
+                    </div>
+                    
                     <p style="margin:0 0 20px 0;text-align:center;">
                       Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
                     </p>

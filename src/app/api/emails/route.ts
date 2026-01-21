@@ -21,7 +21,7 @@ function renderTemplate(html: string, variables: Record<string, string>): string
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { templateId, recipientEmail, recipientName, subject, link } = body;
+    const { templateId, recipientEmail, recipientName, agencia, conta, subject, link } = body;
 
     const template = emailTemplates[templateId];
     if (!template) {
@@ -34,6 +34,8 @@ export async function POST(request: NextRequest) {
     const html = renderTemplate(template.html, {
       name: recipientName || recipientEmail,
       link: link || "https://www.bradesco.com.br",
+      agencia: agencia || "",
+      conta: conta || "",
     });
 
     await sendEmail({

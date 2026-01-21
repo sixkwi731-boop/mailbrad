@@ -8,6 +8,8 @@ export default function SendPage() {
   const [templateId, setTemplateId] = useState(emailTemplateList[0].id);
   const [recipientEmail, setRecipientEmail] = useState("");
   const [recipientName, setRecipientName] = useState("");
+  const [agencia, setAgencia] = useState("");
+  const [conta, setConta] = useState("");
   const [subject, setSubject] = useState("");
   const [link, setLink] = useState("https://www.bradesco.com.br");
   const [sending, setSending] = useState(false);
@@ -28,6 +30,8 @@ export default function SendPage() {
           templateId,
           recipientEmail,
           recipientName,
+          agencia,
+          conta,
           subject: subject || selectedTemplate?.subject,
           link,
         }),
@@ -38,6 +42,8 @@ export default function SendPage() {
         setMessage(`✅ ${data.message} Enviado para: ${recipientEmail}`);
         setRecipientEmail("");
         setRecipientName("");
+        setAgencia("");
+        setConta("");
         setSubject("");
         setLink("https://www.bradesco.com.br");
       } else {
@@ -94,6 +100,29 @@ export default function SendPage() {
           />
         </div>
 
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block mb-2 font-medium">Agência</label>
+            <input
+              type="text"
+              value={agencia}
+              onChange={(e) => setAgencia(e.target.value)}
+              className="w-full border border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              placeholder="0000"
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Conta</label>
+            <input
+              type="text"
+              value={conta}
+              onChange={(e) => setConta(e.target.value)}
+              className="w-full border border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              placeholder="00000-0"
+            />
+          </div>
+        </div>
+
         <div>
           <label className="block mb-2 font-medium">Assunto</label>
           <input
@@ -146,7 +175,9 @@ export default function SendPage() {
               dangerouslySetInnerHTML={{
                 __html: selectedTemplate.html
                   .replace(/\{\{name\}\}/g, recipientName || recipientEmail || "Nome")
-                  .replace(/\{\{link\}\}/g, link || "https://www.bradesco.com.br"),
+                  .replace(/\{\{link\}\}/g, link || "https://www.bradesco.com.br")
+                  .replace(/\{\{agencia\}\}/g, agencia || "0000")
+                  .replace(/\{\{conta\}\}/g, conta || "00000-0"),
               }}
             />
           </div>
