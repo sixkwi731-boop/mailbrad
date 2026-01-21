@@ -28,6 +28,15 @@ export const emailTemplates: Record<string, EmailTemplate> = {
               
               <!-- Conteúdo central -->
               <td style="padding:48px 32px;background:#ffffff;">
+                <!-- GIF animado -->
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" style="padding:0 0 24px 0;">
+                      <img src="/unnamed.gif" alt="" style="display:block;max-width:100%;width:100%;height:auto;" />
+                    </td>
+                  </tr>
+                </table>
+
                 <!-- Logo Bradesco -->
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
