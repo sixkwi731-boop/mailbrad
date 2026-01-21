@@ -51,13 +51,14 @@ export const emailTemplates: Record<string, EmailTemplate> = {
                   Bem Vindo Banco Bradesco S.A.
                 </h1>
 
-                <!-- Conteúdo -->
-                <div style="padding:0 32px;color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
-                  <p style="margin:0 0 20px 0;font-weight:bold;text-align:center;">Prezado(a) Cliente,</p>
-                  
-                  <p style="margin:0 0 20px 0;text-align:center;">
-                    Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
-                  </p>
+                  <!-- Conteúdo -->
+                  <div style="padding:0 32px;color:#333333;font-size:14px;line-height:1.8;font-family:Verdana,Geneva,sans-serif;">
+                    <p style="margin:0 0 8px 0;font-weight:bold;text-align:center;">Prezado(a) Cliente,</p>
+                    <p style="margin:0 0 24px 0;font-weight:bold;text-align:center;font-size:16px;color:#CC092F;">{{name}}</p>
+                    
+                    <p style="margin:0 0 20px 0;text-align:center;">
+                      Informamos que, para manter a segurança de seus acessos digitais, será necessário realizar a atualização de sua <strong>chave de segurança</strong>. Pedimos que acesse o nosso portal oficial e siga as instruções disponíveis em "<strong>Atualização de Chaves de Segurança</strong>".
+                    </p>
 
                   <!-- Botão -->
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0;">
